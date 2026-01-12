@@ -1,0 +1,9 @@
+{
+  "name": "user-story-to-tests-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "cd user-story-to-tests && npm run dev",
+    "typecheck": "cd user-story-to-tests && npm run typecheck"
+  }
+}

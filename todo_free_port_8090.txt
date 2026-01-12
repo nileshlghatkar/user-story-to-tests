@@ -1,0 +1,7 @@
+Task: Free port 8090
+- Find process owning TCP port 8090
+- Stop the process (if safe)
+- Verify port is free
+- Report PID and process name
+
+Created by assistant for tracking.
