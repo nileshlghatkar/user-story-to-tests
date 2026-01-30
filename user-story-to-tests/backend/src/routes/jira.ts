@@ -166,7 +166,7 @@ jiraRouter.get('/story/:id', async (req: express.Request, res: express.Response)
       }
     }
 
-    // Heuristic: acceptance criteria may exist in a custom field or inside the description under 'Acceptance Criteria' heading
+    // Heuristic: acceptance criteria may exist in a custom field named 'Acceptance' or 'Acceptance Criteria'
     let acceptanceCriteria = ''
 
     // Try to find a custom field named 'Acceptance' or 'Acceptance Criteria'
@@ -178,12 +178,6 @@ jiraRouter.get('/story/:id', async (req: express.Request, res: express.Response)
           break
         }
       }
-    }
-
-    if (!acceptanceCriteria && description) {
-      // crude extraction: look for heading
-      const m = description.match(/acceptance criteria[:\-\s]*([\s\S]{10,500})/i)
-      if (m) acceptanceCriteria = m[1].trim()
     }
 
     const additionalInfo = ''
